@@ -128,6 +128,11 @@ jsBoot.pack('LxxlLib.model', function (api) {
         attachments: api.ArrayMutable.bind({}, Attachee)
     });
 
+    this.Collection = api.TypedMutable.bind({}, {
+        id:'uk',
+        title:'United Kingdom'
+    });
+
     var SubActivity = api.TypedMutable.bind({}, {
         title: 'Nouvelle Activité',
         description: 'Présentez ici votre activité en 200 caractères.',
@@ -141,7 +146,8 @@ jsBoot.pack('LxxlLib.model', function (api) {
         thumbnailUrl: '',
         blobs: MetaBlob,
         pages: api.ArrayMutable.bind({}, this.Page),
-        extra: Extra
+        extra: Extra,
+        collection: this.Collection
     });
 
     var dirtyDateConverter = function (v) {
